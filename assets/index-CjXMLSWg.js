@@ -474,22 +474,29 @@ html body {
     border: 1px #ddd solid;
     border-radius: 10px;
     padding: 20px;
-    background: rgba(0,0,0,0.02);
-    
+    background: rgba(0, 0, 0, 0.02);
+    opacity: 0.7;
+
+    &.active {
+        border-color: #0b33af;
+        opacity: 1;
+    }
+
     .item {
         display: flex;
         flex-direction: column;
+
         .label {
             font-size: 12px;
-            color: rgba(0,0,0,0.8);
+            color: rgba(0, 0, 0, 0.8);
         }
-        
+
         .value {
             font-size: 16px;
             font-weight: bold;
         }
     }
-`,xW=(e,t)=>e&&t?(parseInt(e)/parseInt(t)*100).toFixed(2):"--";function EW({item:e}){const[t,n]=c.useState(null);c.useEffect(()=>{e!=null&&e.rune_id&&r(e.rune_id)},[e==null?void 0:e.rune_id]);const r=async o=>{try{const i=await Vc.unisat_runeInfo(o);n(i),console.log(i)}catch(i){console.error(i)}};return it.jsxs(wW,{children:[it.jsxs("div",{className:"item",children:[it.jsx("div",{className:"label",children:"Rune ID"}),it.jsx("div",{className:"value",children:it.jsx("a",{target:"_blank",href:`https://ordinals.com/rune/${e.rune_id}`,children:e.rune_id})})]}),it.jsxs("div",{className:"item",children:[it.jsx("div",{className:"label",children:"名称"}),it.jsxs("div",{className:"value",children:[it.jsxs("a",{target:"_blank",href:`https://ordinals.com/rune/${t==null?void 0:t.spacedRune}`,children:[t==null?void 0:t.spacedRune," (",t==null?void 0:t.symbol,")"]})," "]})]}),it.jsxs("div",{className:"item",children:[it.jsx("div",{className:"label",children:"Mint 次数"}),it.jsxs("div",{className:"value",children:[e.tx_count," / ",t==null?void 0:t.mints,"  (",xW(e.tx_count,t==null?void 0:t.mints),"%)"]})]})]})}const $W=so.div`
+`,xW=(e,t)=>e&&t?(parseInt(e)/parseInt(t)*100).toFixed(2):"--";function EW({item:e}){const[t,n]=c.useState(null),r=async o=>{try{const i=await Vc.unisat_runeInfo(o);n(i),console.log(i)}catch(i){console.error(i)}};return it.jsxs(wW,{className:t?"active":"",onClick:()=>r(e==null?void 0:e.rune_id),children:[it.jsxs("div",{className:"item",children:[it.jsx("div",{className:"label",children:"Rune ID"}),it.jsx("div",{className:"value",children:it.jsx("a",{target:"_blank",href:`https://ordinals.com/rune/${e.rune_id}`,children:e.rune_id})})]}),it.jsxs("div",{className:"item",children:[it.jsx("div",{className:"label",children:"名称"}),it.jsxs("div",{className:"value",children:[it.jsxs("a",{target:"_blank",href:`https://ordinals.com/rune/${t==null?void 0:t.spacedRune}`,children:[t==null?void 0:t.spacedRune," (",t==null?void 0:t.symbol,")"]})," "]})]}),it.jsxs("div",{className:"item",children:[it.jsx("div",{className:"label",children:"Mint 次数"}),it.jsxs("div",{className:"value",children:[e.tx_count," / ",t==null?void 0:t.mints,"  (",xW(e.tx_count,t==null?void 0:t.mints),"%)"]})]})]})}const $W=so.div`
     
     
     .lists {
